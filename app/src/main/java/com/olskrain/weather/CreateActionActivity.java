@@ -6,9 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 
-/**
- * Created by shkryaba on 24/06/2018.
- */
 
 public class CreateActionActivity extends AppCompatActivity {
 
