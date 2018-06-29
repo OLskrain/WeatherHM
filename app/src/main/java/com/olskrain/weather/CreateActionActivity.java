@@ -17,15 +17,15 @@ public class CreateActionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_action_activity);
 
-        editText = findViewById(R.id.et);
+        editText = findViewById(R.id.et); //обращаемся к полю во второй активити
     }
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed() {//возврат в предыдущую активити
 //        super.onBackPressed();
         Intent intent = new Intent(this, WeatherActivity.class);
-        intent.putExtra(TEXT, editText.getText().toString().trim());
-        startActivity(intent);
+        intent.putExtra(TEXT, editText.getText().toString().trim()); //считываем данные
+        startActivity(intent);//передаем наш текст в первую активити
         finish();
     }
 }

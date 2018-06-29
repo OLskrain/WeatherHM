@@ -42,20 +42,20 @@ public class WeatherActivity extends AppCompatActivity {
         //Передаем контекст. потом выводим нужное сообщение.и как долго мы хотим его видеть
         Toasty.success(getApplicationContext(), instanceState + " - onCreate()", Toast.LENGTH_SHORT).show();
 
-        textView = findViewById(R.id.tv); //обращаемся по id. и и полуили TextView
+        textView = findViewById(R.id.tv); //обращаемся по id. и и полуили TextView c ервого экрана
         fab = findViewById(R.id.fab);
 
         if (getIntent().getExtras() != null) {
             String text = getIntent().getExtras().getString(TEXT);
-            textView.setText("Добрый день, " + text);
+            textView.setText("Добрый день, " + text); //выводим строку в первой активити
         }
 
-        fab.setOnClickListener(new View.OnClickListener() {
+        fab.setOnClickListener(new View.OnClickListener() {//слушаем нашу кнопку
             @Override
             public void onClick(View view) {
-                if (!isPressed) {
+                if (!isPressed) { //здесь используем проверку, чтобы при нескольких нажатиях не открывалось N активити
                     isPressed = true;
-                    startNewActivity();
+                    startNewActivity(); // по нажатию создаем новую активити
                 }
             }
         });
@@ -63,7 +63,9 @@ public class WeatherActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate");
     }
 
-    private void startNewActivity() {
+    private void startNewActivity() { //метод запуска новой активити
+        //с помошью интента передаем контекст и нашу новую активити.
+        //вместо this можно вообще передать активити из другово приложения и сделать действие.например отослать смс
         Intent intent = new Intent(this, CreateActionActivity.class);
         startActivity(intent);
     }
@@ -99,9 +101,10 @@ public class WeatherActivity extends AppCompatActivity {
     }
 
     @Override
+    //метод возврата назад.
     public void onBackPressed() {
         super.onBackPressed();
-        isPressed = false;
+        isPressed = false;//делаем нашу кнопку снова активной при переходе назад
     }
 
     @Override

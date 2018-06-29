@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.olskrain.weather">
 
+    <!--здесь,кроме стандартных настроек, подключили класс APP через android:name=".App"-->
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -19,6 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--добавляем вторую активити-->
         <activity android:name=".CreateActionActivity" />
     </application>
 

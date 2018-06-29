@@ -27,7 +27,7 @@
                 android:layout_centerInParent="true"
                 android:text="@string/country"
                 android:textColor="@android:color/white"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
         </RelativeLayout>
