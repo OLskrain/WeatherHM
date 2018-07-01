@@ -11,25 +11,28 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-    <ImageView
-        android:id="@+id/ivProfile"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        app:srcCompat="@drawable/ic_android_24dp"
-        tools:ignore="VectorDrawableCompat" />
+        android:src="@drawable/other_tyulen"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@color/colorText"/>
+
 
     <TextView
         android:id="@+id/tvUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ivProfile"
+        android:layout_below="@+id/profile_image"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="Ivan Ivanov"
+        android:text="@string/UserName"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="18sp" />
+        android:textSize="@dimen/padding_18dp" />
 
 </RelativeLayout>
