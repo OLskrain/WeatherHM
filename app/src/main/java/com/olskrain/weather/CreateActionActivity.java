@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 
 
-public class CreateActionActivity extends AppCompatActivity {
+public class CreateActionActivity extends BaseActivity {
 
     private static final String TEXT = "TEXT";
     private EditText editText;

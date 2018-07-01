@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <android.support.design.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
         style="@style/Widget.MaterialComponents.BottomAppBar"
@@ -14,6 +13,7 @@
         android:layout_gravity="bottom"
         app:backgroundTint="@color/colorPrimaryDark"
         app:fabAttached="true"
+        app:fabCradleDiameter="70dp"
         app:fabCradleRoundedCornerRadius="10dp"
         app:layout_scrollFlags="scroll|enterAlways"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
@@ -21,15 +21,13 @@
         app:title="@string/cretae_action"
         app:titleTextColor="@android:color/black">
 
-
     </android.support.design.bottomappbar.BottomAppBar>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        app:srcCompat="@drawable/ic_add_24dp"
         app:layout_anchor="@id/bottomAppBar"
+        app:srcCompat="@drawable/ic_add_black_24dp"
         tools:ignore="VectorDrawableCompat" />
 </android.support.design.widget.CoordinatorLayout>

@@ -13,7 +13,6 @@ public class App extends Application {//класс чтобы подтянуть
     @Override
     public void onCreate() {
         super.onCreate();
-        //вытягиваем цвет из ресурсов
         Toasty.Config.getInstance().setSuccessColor(getResources().getColor(R.color.blue)).apply();
     }
 }

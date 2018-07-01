@@ -6,37 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".WeatherActivity">
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbar_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="@string/country"
-                android:textColor="@android:color/white"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-        </RelativeLayout>
-    </android.support.design.widget.AppBarLayout>
-
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize">
+        android:layout_height="match_parent">
 
         <RelativeLayout
             android:id="@+id/rl"
@@ -51,6 +23,7 @@
                 android:layout_marginEnd="@dimen/default_padding"
                 android:layout_marginStart="@dimen/default_padding"
                 android:layout_marginTop="@dimen/default_padding"
+                android:text="Fullname"
                 android:textStyle="bold" />
 
             <TextView
@@ -70,7 +43,5 @@
         </RelativeLayout>
 
     </RelativeLayout>
-
-    <include layout="@layout/bottom_container" />
 
 </android.support.constraint.ConstraintLayout>

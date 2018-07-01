@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import es.dmoral.toasty.Toasty;
 
-public class WeatherActivity extends AppCompatActivity {
+public class WeatherActivity extends BaseActivity {
 
     private static final String TAG = "WeatherActivity";
     private static final String TEXT = "TEXT";
@@ -25,50 +25,51 @@ public class WeatherActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.weather_main);
 
-        String instanceState; //создаем новую переменную для того чтобы посмотреть что у нас в инстанс
-        if (savedInstanceState == null) {
-            instanceState = "Первый запуск";
-        } else {
-            instanceState = "Повторный запуск";
-        }
-
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-
-        //Toasty-внешняя библиотека для вывода различный сообщений(небольших). но не стоит использовать в нормальных проектах
-        //Передаем контекст. потом выводим нужное сообщение.и как долго мы хотим его видеть
-        Toasty.success(getApplicationContext(), instanceState + " - onCreate()", Toast.LENGTH_SHORT).show();
-
-        textView = findViewById(R.id.tv); //обращаемся по id. и и полуили TextView c ервого экрана
-        fab = findViewById(R.id.fab);
-
-        if (getIntent().getExtras() != null) {
-            String text = getIntent().getExtras().getString(TEXT);
-            textView.setText("Добрый день, " + text); //выводим строку в первой активити
-        }
-
-        fab.setOnClickListener(new View.OnClickListener() {//слушаем нашу кнопку
-            @Override
-            public void onClick(View view) {
-                if (!isPressed) { //здесь используем проверку, чтобы при нескольких нажатиях не открывалось N активити
-                    isPressed = true;
-                    startNewActivity(); // по нажатию создаем новую активити
-                }
-            }
-        });
-
-        Log.d(TAG, "onCreate");
+//        setContentView(R.layout.weather_layout);
+//
+//        String instanceState; //создаем новую переменную для того чтобы посмотреть что у нас в инстанс
+//        if (savedInstanceState == null) {
+//            instanceState = "Первый запуск";
+//        } else {
+//            instanceState = "Повторный запуск";
+//        }
+//
+//        Toolbar toolbar = findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setDisplayShowTitleEnabled(false);
+//
+//        //Toasty-внешняя библиотека для вывода различный сообщений(небольших). но не стоит использовать в нормальных проектах
+//        //Передаем контекст. потом выводим нужное сообщение.и как долго мы хотим его видеть
+//        Toasty.success(getApplicationContext(), instanceState + " - onCreate()", Toast.LENGTH_SHORT).show();
+//
+//        textView = findViewById(R.id.tv); //обращаемся по id. и и полуили TextView c ервого экрана
+//        fab = findViewById(R.id.fab);
+//
+//        if (getIntent().getExtras() != null) {
+//            String text = getIntent().getExtras().getString(TEXT);
+//            textView.setText("Добрый день, " + text); //выводим строку в первой активити
+//        }
+//
+//        fab.setOnClickListener(new View.OnClickListener() {//слушаем нашу кнопку
+//            @Override
+//            public void onClick(View view) {
+//                if (!isPressed) { //здесь используем проверку, чтобы при нескольких нажатиях не открывалось N активити
+//                    isPressed = true;
+//                    startNewActivity(); // по нажатию создаем новую активити
+//                }
+//            }
+//        });
+//
+//        Log.d(TAG, "onCreate");
     }
 
-    private void startNewActivity() { //метод запуска новой активити
-        //с помошью интента передаем контекст и нашу новую активити.
-        //вместо this можно вообще передать активити из другово приложения и сделать действие.например отослать смс
-        Intent intent = new Intent(this, CreateActionActivity.class);
-        startActivity(intent);
-    }
+//    private void startNewActivity() { //метод запуска новой активити
+//        //с помошью интента передаем контекст и нашу новую активити.
+//        //вместо this можно вообще передать активити из другово приложения и сделать действие.например отослать смс
+//        Intent intent = new Intent(this, CreateActionActivity.class);
+//        startActivity(intent);
+//    }
 
     @Override
     protected void onStart() {

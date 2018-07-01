@@ -20,8 +20,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--добавляем вторую активити-->
-        <activity android:name=".CreateActionActivity" />
+        <!--добавляем новые активности-->
+        <activity
+
+            android:name=".CreateActionActivity"
+            android:theme="@style/NoActionBar" />
+        <!--<activity-->
+        <!--android:name=".BaseActivity"-->
+        <!--android:label="@string/title_activity_base"-->
+        <!--android:theme="@style/AppTheme.NoActionBar" />-->
     </application>
 
 </manifest>
